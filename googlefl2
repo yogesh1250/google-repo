@@ -1,0 +1,49 @@
+from time import sleep
+
+class LoginPage:
+    def __init__(self, browser):
+        self.browser = browser
+
+    def login(self, username, password):
+        username_input = self.browser.find_element_by_css_selector("input[name='username']")
+        password_input = self.browser.find_element_by_css_selector("input[name='password']")
+        username_input.send_keys(username)
+        password_input.send_keys(password)
+        login_button = browser.find_element_by_xpath("//button[@type='submit']")
+        login_button.click()
+        sleep(5)
+
+class HomePage:
+    def __init__(self, browser):
+        self.browser = browser
+        self.browser.get('https://www.instagram.com/')
+
+    def go_to_login_page(self):
+        self.browser.find_element_by_xpath("//a[text()='Log in']").click()
+        sleep(2)
+        return LoginPage(self.browser)
+}}
+}}
+
+
+INFO [2019-12-17 22:15:58] [username]  Tag [1/2]
+INFO [2019-12-17 22:15:58] [username]  --> b'bmw'
+INFO [2019-12-17 22:16:07] [username]  desired amount: 14  |  top posts [disabled]: 9  |  possible posts: 43726739
+INFO [2019-12-17 22:16:13] [username]  Like# [1/14]
+INFO [2019-12-17 22:16:13] [username]  https://www.instagram.com/p/B6MCcGcC3tU/
+INFO [2019-12-17 22:16:15] [username]  Image from: b'mattyproduction'
+INFO [2019-12-17 22:16:15] [username]  Link: b'https://www.instagram.com/p/B6MCcGcC3tU/'
+INFO [2019-12-17 22:16:15] [username]  Description: b'Mal etwas anderes \xf0\x9f\x91\x80\xe2\x98\xba\xef\xb8\x8f Bald ist das komplette Video auf YouTube zu finden (n\xc3\xa4here Infos werden folgen). Vielen Dank an @patrick_jwki @thehuthlife  und @christic_  f\xc3\xbcr das bereitstellen der Autos \xf0\x9f\x94\xa5\xf0\x9f\x98\x8d#carporn#cars#tuning#bagged#bmw#m2#m2competition#focusrs#ford#mk3#e92#m3#panasonic#cinematic#gh5s#dji#roninm#adobe#videography#music#bimmer#fordperformance#night#shooting#'
+INFO [2019-12-17 22:16:15] [username]  Location: b'K\xc3\xb6ln, Germany'
+INFO [2019-12-17 22:16:51] [username]  --> Image Liked!
+INFO [2019-12-17 22:16:56] [username]  --> Not commented
+INFO [2019-12-17 22:16:57] [username]  --> Not following
+INFO [2019-12-17 22:16:58] [username]  Like# [2/14]
+INFO [2019-12-17 22:16:58] [username]  https://www.instagram.com/p/B6MDK1wJ-Kb/
+INFO [2019-12-17 22:17:01] [username]  Image from: b'davs0'
+INFO [2019-12-17 22:17:01] [username]  Link: b'https://www.instagram.com/p/B6MDK1wJ-Kb/'
+INFO [2019-12-17 22:17:01] [username]  Description: b'Someone said cloud? \xf0\x9f\xa4\x94\xf0\x9f\xa4\xad\xf0\x9f\x98\x88 \xe2\x80\xa2\n\xe2\x80\xa2\n\xe2\x80\xa2\n\xe2\x80\xa2\n#bmw #bmwrepost #bmwm4 #bmwm4gts #f82 #bmwmrepost #bmwmsport #bmwmperformance #bmwmpower #bmwm4cs #austinyellow #davs0 #mpower_official #bmw_world_ua #bimmerworld #bmwfans #bmwfamily #bimmers #bmwpost #ultimatedrivingmachine #bmwgang #m3f80 #m5f90 #m4f82 #bmwmafia #bmwcrew #bmwlifestyle'
+INFO [2019-12-17 22:17:34] [username]  --> Image Liked!
+INFO [2019-12-17 22:17:37] [username]  --> Not commented
+INFO [2019-12-17 22:17:38] [username]  --> Not following
+
